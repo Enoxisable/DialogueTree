@@ -29,6 +29,13 @@ public class DialogueTree
        Collections.sort(dialogueNodes);
     }
     
+    public DialogueChoice playNode(int nodeID)
+    {
+         DialogueChoice choice;
+         choice = dialogueNodes.get(nodeID).playNode();
+         return choice;   
+    }
+    
     public int getArrayLength()
     {
          return dialogueNodes.size();   

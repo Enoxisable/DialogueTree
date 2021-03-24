@@ -24,4 +24,14 @@ public class DialogueChoice
     {
         return message;
     }
+    
+    public int getReturnValue()
+    {
+        return returnValue;   
+    }
+    
+    public int getNextNodeID()
+    {
+        return nextNodeID;   
+    }
 }

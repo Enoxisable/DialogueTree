@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 /**
  * Write a description of class DialogueNode here.
  *
@@ -16,6 +17,46 @@ public class DialogueNode implements Comparable<DialogueNode>
     {
         this.id = id;
         this.message = message;
+    }
+    
+    public DialogueChoice playNode()
+    {
+        System.out.println(message);
+        printChoices();
+        int choiceID = 0;
+        
+        while(choiceID == 0 || choiceID > dialogueChoices.size())
+        {
+            choiceID = makeDecision();
+        }
+        
+            choiceID--;
+        return dialogueChoices.get(choiceID);
+    }
+    
+    public void printChoices()
+    {
+        for(int i = 0; i < dialogueChoices.size(); i++)
+        {
+             System.out.println((i+1) + ".  " + dialogueChoices.get(i).getMessage());
+        }
+    }
+    
+    public int makeDecision()
+    {
+           int decisionNumber = 0; 
+           Scanner scanner = new Scanner(System.in);
+           
+           System.out.println("Make decision:");
+           decisionNumber = scanner.nextInt();
+           
+           if(decisionNumber > dialogueChoices.size() || decisionNumber == 0)
+           {
+               System.out.println("Not a valid option, try again");
+               return decisionNumber;
+           }
+           
+           return decisionNumber;
     }
     
     public int getID()
