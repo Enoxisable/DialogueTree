@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<DialogueTree>
+    <DialogueNode>
+      <id>0</id>
+      <Message>Hello!</Message>
+
+          <DialogueChoice>
+            <Message>Fuck you</Message>
+            <ReturnValue>0</ReturnValue>
+            <NextNodeID>1</NextNodeID>
+          </DialogueChoice>
+
+          <DialogueChoice>
+            <Message>Hey bby</Message>
+            <ReturnValue>0</ReturnValue>
+            <NextNodeID>2</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode>
+      <id>1</id>
+      <Message>Wow sad smiley</Message>
+
+          <DialogueChoice>
+            <Message>Bye!</Message>
+            <ReturnValue>1</ReturnValue>
+            <NextNodeID>5</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode>
+      <id>2</id>
+      <Message>How are you?</Message>
+
+          <DialogueChoice>
+            <Message>Im good!</Message>
+            <ReturnValue>0</ReturnValue>
+            <NextNodeID>3</NextNodeID>
+          </DialogueChoice>
+
+          <DialogueChoice>
+            <Message>Jimmy Kimmy can eat my ass</Message>
+            <ReturnValue>0</ReturnValue>
+            <NextNodeID>4</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode>
+      <id>3</id>
+      <Message>Im glad!</Message>
+
+          <DialogueChoice>
+            <Message>Bye!</Message>
+            <ReturnValue>2</ReturnValue>
+            <NextNodeID>0</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode>
+      <id>4</id>
+      <Message>What the fuck??</Message>
+
+          <DialogueChoice>
+            <Message>Bye!</Message>
+            <ReturnValue>1</ReturnValue>
+            <NextNodeID>5</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode>
+      <id>5</id>
+      <Message>I dont want to talk to you..</Message>
+
+          <DialogueChoice>
+            <Message>Bye then hoe</Message>
+            <ReturnValue>1</ReturnValue>
+            <NextNodeID>5</NextNodeID>
+          </DialogueChoice>
+
+    </DialogueNode>
+
+</DialogueTree>
