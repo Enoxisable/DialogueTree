@@ -18,6 +18,7 @@ public class NPC
     private String dialogueTreePath;
     private String name;
     private File fXmlFile;
+    
     public NPC(String name)
     {
         this.name = name;
