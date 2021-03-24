@@ -70,7 +70,6 @@ public class NPC
                 
                 //For debugging
                 //System.out.print(tempNode.getMessage() + " ");
-                //System.out.println(id);
                 
                 NodeList cNodeList = nElement.getElementsByTagName("DialogueChoice");
                 
@@ -95,7 +94,8 @@ public class NPC
            e.printStackTrace();
        }
     }
-   /* TEST FOR IMPORT
+   
+    /* TEST FOR IMPORT
     * public void testPrint()
     *{
     *    for(int i = 0; i < dialogueTree.getArrayLength(); i++)

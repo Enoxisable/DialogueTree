@@ -1,13 +1,13 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 /**
  * Write a description of class DialogueNode here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DialogueNode
-{
-    
+public class DialogueNode implements Comparable<DialogueNode>
+{  
     private int id;
     private String message;
     private ArrayList<DialogueChoice> dialogueChoices = new ArrayList<>();
@@ -43,5 +43,11 @@ public class DialogueNode
     {
          return dialogueChoices.get(index);    
     }
-
+    
+    @Override
+    public int compareTo(DialogueNode dialogueNode)
+    {
+        return Integer.compare(getID(), dialogueNode.getID());
+    }
+    
 }

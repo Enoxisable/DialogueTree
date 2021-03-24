@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <DialogueTree>
+
     <DialogueNode id='0' message="Hello!">
             <DialogueChoice returnValue="0" nextNodeID="1" message="Fuck you"></DialogueChoice>
 
@@ -32,8 +33,10 @@
     </DialogueNode>
 
     <DialogueNode id='5' message="I dont want to talk to you..">
-            <DialogueChoice returnValue="1" nextNodeID="5" message="Bye then hoe"></DialogueChoice>
+          <DialogueChoice returnValue="1" nextNodeID="5" message="Bye then hoe"></DialogueChoice>
 
     </DialogueNode>
+
+
 
 </DialogueTree>
