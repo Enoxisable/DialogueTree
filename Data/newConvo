@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<DialogueTree>
+    <DialogueNode id='0' message="Hello!">
+            <DialogueChoice returnValue="0" nextNodeID="1" message="Fuck you"></DialogueChoice>
+
+            <DialogueChoice returnValue="0" nextNodeID="2" message="Hey bby"></DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode id='1' message="Wow sad smiley">
+
+            <DialogueChoice returnValue="1" nextNodeID="5" message="Bye!"></DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode id='2' message="How are you?">
+            <DialogueChoice returnValue="0" nextNodeID="3" message="Im good!"></DialogueChoice>
+
+            <DialogueChoice returnValue="0" nextNodeID="4" message="Jimmy Kimmy can eat my ass"></DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode id='3' message="Im glad!">
+            <DialogueChoice returnValue="2" nextNodeID="0" message="Bye!"></DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode id='4' message="What the fuck??">
+            <DialogueChoice returnValue="1" nextNodeID="5" message="Bye!"></DialogueChoice>
+
+    </DialogueNode>
+
+    <DialogueNode id='5' message="I dont want to talk to you..">
+            <DialogueChoice returnValue="1" nextNodeID="5" message="Bye then hoe"></DialogueChoice>
+
+    </DialogueNode>
+
+</DialogueTree>

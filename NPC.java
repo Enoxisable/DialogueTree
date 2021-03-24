@@ -62,11 +62,15 @@ public class NPC
                 Node dNode = dNodeList.item(i);
                 Element nElement = (Element) dNode;
                 
-                id = Integer.parseInt(nElement.getElementsByTagName("id").item(0).getTextContent());
-                nodeMessage = nElement.getElementsByTagName("Message").item(0).getTextContent();
+                id = Integer.parseInt(nElement.getAttribute("id"));
+                nodeMessage = nElement.getAttribute("message");
                 
                 DialogueNode tempNode = new DialogueNode(id, nodeMessage);
-                System.out.println(tempNode.getMessage());
+                
+                //For debugging
+                //System.out.print(tempNode.getMessage() + " ");
+                //System.out.println(id);
+                
                 NodeList cNodeList = nElement.getElementsByTagName("DialogueChoice");
                 
                 for(int j = 0; j < cNodeList.getLength(); j++)
@@ -74,9 +78,9 @@ public class NPC
                      Node cNode = cNodeList.item(j);
                      Element oElement = (Element) cNode;
                      
-                     choiceMessage = oElement.getElementsByTagName("Message").item(0).getTextContent();
-                     returnValue = Integer.parseInt(oElement.getElementsByTagName("ReturnValue").item(0).getTextContent());
-                     nextNodeID = Integer.parseInt(oElement.getElementsByTagName("NextNodeID").item(0).getTextContent());
+                     choiceMessage = oElement.getAttribute("message");
+                     returnValue = Integer.parseInt(oElement.getAttribute("returnValue"));
+                     nextNodeID = Integer.parseInt(oElement.getAttribute("nextNodeID"));
                      tempNode.addChoice(choiceMessage, returnValue, nextNodeID);
                      
                 }
@@ -90,20 +94,21 @@ public class NPC
            e.printStackTrace();
        }
     }
-    
-    public void testPrint()
-    {
-        for(int i = 0; i < dialogueTree.getArrayLength(); i++)
-        {
-            DialogueNode node = dialogueTree.getNode(i);
-            System.out.println(node.getMessage());
-            
-            for(int j = 0; j < node.getArrayLength(); j++)
-            {
-                DialogueChoice choice = node.getChoice(j);
-                System.out.println("        " + choice.getMessage());
-            }
-        }
-    }
+   /* TEST FOR IMPORT
+    * public void testPrint()
+    *{
+    *    for(int i = 0; i < dialogueTree.getArrayLength(); i++)
+    *    {
+    *        DialogueNode node = dialogueTree.getNode(i);
+    *        System.out.println(node.getMessage());
+    *        
+    *        for(int j = 0; j < node.getArrayLength(); j++)
+    *        {
+    *            DialogueChoice choice = node.getChoice(j);
+    *            System.out.println("        " + choice.getMessage());
+    *        }
+    *    }
+    *}
+    */ 
     
 }
