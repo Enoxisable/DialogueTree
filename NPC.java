@@ -17,14 +17,15 @@ public class NPC
     private DialogueTree dialogueTree;
     private String dialogueTreePath;
     private String name;
-    
-    public NPC(String name, String xmlPath)
+    private File fXmlFile;
+    public NPC(String name)
     {
         this.name = name;
+        this.dialogueTreePath = "Data/" + name;
+        fXmlFile = new File(dialogueTreePath);
         
-        if(xmlPath != null)
+        if(fXmlFile.exists())
         {
-            dialogueTreePath = xmlPath;
             addDialogueTree(dialogueTreePath);
         }
         else
@@ -47,7 +48,6 @@ public class NPC
        
        try
        {
-           File fXmlFile = new File(path);
            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
            Document doc = dBuilder.parse(fXmlFile);
