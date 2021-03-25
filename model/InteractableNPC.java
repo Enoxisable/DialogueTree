@@ -17,12 +17,9 @@ public class InteractableNPC extends NPC
 {
     // instance variables - replace the example below with your own
     private String name;
-<<<<<<< Updated upstream:NPC.java
-=======
     private boolean isHostile;
     
     private String dialogueTreePath;
->>>>>>> Stashed changes:model/InteractableNPC.java
     private File fXmlFile;
     private int startNodeID;
     private DialogueTree dialogueTree;
