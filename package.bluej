@@ -2,15 +2,44 @@
 dependency1.from=NPC
 dependency1.to=DialogueTree
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 dependency2.from=NPC
 dependency2.to=DialogueNode
+=======
+dependency10.from=NPCController
+dependency10.to=NPC
+dependency10.type=UsesDependency
+dependency2.from=DialogueTree
+dependency2.to=DialogueChoice
+>>>>>>> Stashed changes
 dependency2.type=UsesDependency
 dependency3.from=DialogueNode
 dependency3.to=DialogueChoice
 dependency3.type=UsesDependency
+<<<<<<< Updated upstream
 dependency4.from=DialogueTree
 dependency4.to=DialogueNode
 dependency4.type=UsesDependency
+=======
+dependency4.from=NPCUI
+dependency4.to=NPCController
+dependency4.type=UsesDependency
+dependency5.from=NPC
+dependency5.to=DialogueTree
+dependency5.type=UsesDependency
+dependency6.from=NPC
+dependency6.to=DialogueNode
+dependency6.type=UsesDependency
+dependency7.from=NPC
+dependency7.to=DialogueChoice
+dependency7.type=UsesDependency
+dependency8.from=NPCContainer
+dependency8.to=NPC
+dependency8.type=UsesDependency
+dependency9.from=NPCController
+dependency9.to=NPCContainer
+dependency9.type=UsesDependency
+>>>>>>> Stashed changes
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=1467
@@ -25,8 +54,13 @@ package.editor.x=696
 package.editor.y=448
 package.frame.height=742
 package.frame.width=929
+<<<<<<< Updated upstream
 package.numDependencies=4
 package.numTargets=4
+=======
+package.numDependencies=10
+package.numTargets=7
+>>>>>>> Stashed changes
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -40,20 +74,26 @@ target1.name=NPC
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
-target1.x=80
+target1.x=90
 target1.y=20
 target2.height=70
 target2.name=DialogueTree
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
+<<<<<<< Updated upstream
 target2.x=260
 target2.y=70
+=======
+target2.x=430
+target2.y=220
+>>>>>>> Stashed changes
 target3.height=70
-target3.name=DialogueNode
+target3.name=NPCContainer
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=120
+<<<<<<< Updated upstream
 target3.x=160
 target3.y=200
 target4.height=70
@@ -63,3 +103,35 @@ target4.type=ClassTarget
 target4.width=120
 target4.x=320
 target4.y=290
+=======
+target3.x=250
+target3.y=130
+target4.height=70
+target4.name=DialogueNode
+target4.showInterface=false
+target4.type=ClassTarget
+target4.width=120
+target4.x=210
+target4.y=280
+target5.height=70
+target5.name=NPCUI
+target5.showInterface=false
+target5.type=ClassTarget
+target5.width=120
+target5.x=660
+target5.y=10
+target6.height=70
+target6.name=NPCController
+target6.showInterface=false
+target6.type=ClassTarget
+target6.width=120
+target6.x=440
+target6.y=70
+target7.height=70
+target7.name=DialogueChoice
+target7.showInterface=false
+target7.type=ClassTarget
+target7.width=120
+target7.x=330
+target7.y=430
+>>>>>>> Stashed changes

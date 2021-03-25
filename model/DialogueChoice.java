@@ -1,3 +1,4 @@
+package model;
 
 /**
  * Write a description of class DialogueChoice here.

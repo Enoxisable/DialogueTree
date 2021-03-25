@@ -1,3 +1,4 @@
+package model;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
@@ -7,22 +8,32 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 /**
- * Write a description of class NPC here.
+ * Write a description of class InteractableNPC here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class NPC
+public class InteractableNPC extends NPC
 {
-    private String dialogueTreePath;
+    // instance variables - replace the example below with your own
     private String name;
+<<<<<<< Updated upstream:NPC.java
+=======
+    private boolean isHostile;
+    
+    private String dialogueTreePath;
+>>>>>>> Stashed changes:model/InteractableNPC.java
     private File fXmlFile;
     private int startNodeID;
     private DialogueTree dialogueTree;
     
-    public NPC(String name)
+    
+    public InteractableNPC(String name, Boolean isHostile)
     {
+        super(name, isHostile);
         this.name = name;
+        this.isHostile = isHostile;
+        
         this.dialogueTreePath = "Data/DialogueTrees/" + name;
         fXmlFile = new File(dialogueTreePath);
         
@@ -36,9 +47,11 @@ public class NPC
         {
             System.out.println("NPC " + name + " has no dialogue, ignoring...");
         }
+        
     }
+
     
-    public void addDialogueTree(String path)
+        public void addDialogueTree(String path)
     {
        //make the XML file reader and parse to data
        int id = 0;
@@ -46,7 +59,6 @@ public class NPC
        String choiceMessage = "";
        int returnValue = 0;
        int nextNodeID = 0;
-       
        dialogueTree = new DialogueTree();
        
        
