@@ -16,6 +16,7 @@ public class NPC
 {
     private String dialogueTreePath;
     private String name;
+    private int id;
     private File fXmlFile;
     private int startNodeID;
     private DialogueTree dialogueTree;
@@ -121,6 +122,16 @@ public class NPC
             }
         }
         
+    }
+    
+    public void setID(int id)
+    {
+        this.id = id;   
+    }
+    
+    public int getID()
+    {
+        return id;   
     }
     
 }
