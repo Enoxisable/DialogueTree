@@ -17,8 +17,8 @@ public class NPC
     private String dialogueTreePath;
     private String name;
     private File fXmlFile;
-    private Interaction interaction;
     private int startNodeID;
+    private DialogueTree dialogueTree;
     
     public NPC(String name)
     {
