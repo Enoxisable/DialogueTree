@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 /**
  * Write a description of class DialogueTree here.
  *
@@ -21,6 +22,18 @@ public class DialogueTree
     public void addDialogueNode(DialogueNode dialogueNode)
     {  
         dialogueNodes.add(dialogueNode);
+    }
+    
+    public void sortNodes()
+    {
+       Collections.sort(dialogueNodes);
+    }
+    
+    public DialogueChoice playNode(int nodeID)
+    {
+         DialogueChoice choice;
+         choice = dialogueNodes.get(nodeID).playNode();
+         return choice;   
     }
     
     public int getArrayLength()

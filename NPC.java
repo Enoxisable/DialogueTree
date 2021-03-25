@@ -14,17 +14,22 @@ import java.io.File;
  */
 public class NPC
 {
-    private DialogueTree dialogueTree;
     private String dialogueTreePath;
     private String name;
+    private File fXmlFile;
+    private Interaction interaction;
+    private int startNodeID;
     
-    public NPC(String name, String xmlPath)
+    public NPC(String name)
     {
         this.name = name;
+        this.dialogueTreePath = "Data/DialogueTrees/" + name;
+        fXmlFile = new File(dialogueTreePath);
         
-        if(xmlPath != null)
+        startNodeID = 0;
+        
+        if(fXmlFile.exists())
         {
-            dialogueTreePath = xmlPath;
             addDialogueTree(dialogueTreePath);
         }
         else
@@ -47,13 +52,12 @@ public class NPC
        
        try
        {
-           File fXmlFile = new File(path);
            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
            Document doc = dBuilder.parse(fXmlFile);
            
            doc.getDocumentElement().normalize();
-           System.out.println("Root : " + doc.getDocumentElement().getNodeName());
+           //System.out.println("Root : " + doc.getDocumentElement().getNodeName());
            
            NodeList dNodeList = doc.getElementsByTagName("DialogueNode");
            
@@ -69,7 +73,6 @@ public class NPC
                 
                 //For debugging
                 //System.out.print(tempNode.getMessage() + " ");
-                //System.out.println(id);
                 
                 NodeList cNodeList = nElement.getElementsByTagName("DialogueChoice");
                 
@@ -86,29 +89,38 @@ public class NPC
                 }
                 
                 dialogueTree.addDialogueNode(tempNode);
+                
            }
            
+           System.out.println("Tree for " + name + " added successfully");
        }
        catch(Exception e)
        {
            e.printStackTrace();
        }
     }
-   /* TEST FOR IMPORT
-    * public void testPrint()
-    *{
-    *    for(int i = 0; i < dialogueTree.getArrayLength(); i++)
-    *    {
-    *        DialogueNode node = dialogueTree.getNode(i);
-    *        System.out.println(node.getMessage());
-    *        
-    *        for(int j = 0; j < node.getArrayLength(); j++)
-    *        {
-    *            DialogueChoice choice = node.getChoice(j);
-    *            System.out.println("        " + choice.getMessage());
-    *        }
-    *    }
-    *}
-    */ 
+   
+    public void startDialogue()
+    {
+        DialogueChoice choiceResult;
+        int tempReturnValue = 0;
+        int currentNode = startNodeID;
+        
+        while(tempReturnValue == 0)
+        {
+            choiceResult = dialogueTree.playNode(currentNode);
+            tempReturnValue = choiceResult.getReturnValue();
+            currentNode = choiceResult.getNextNodeID();
+            
+            if(tempReturnValue != 0)
+            {
+                startNodeID = choiceResult.getNextNodeID();
+                System.out.println("Convo has ended");
+                System.out.println("Return value is now: " + choiceResult.getReturnValue());
+                System.out.println("Start ID is now: " + startNodeID);
+            }
+        }
+        
+    }
     
 }
